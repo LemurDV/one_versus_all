@@ -61,7 +61,9 @@ while running:
         elif game_state == GAMEPLAY:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and not player.is_attacking:
-                    player.attack(enemies, mouse_pos, game_manager.experience_multiplier)
+                    player.attack(
+                        enemies, mouse_pos, game_manager.experience_multiplier
+                    )
                 elif event.key == pygame.K_ESCAPE:
                     game_state = MAIN_MENU
 
@@ -142,8 +144,15 @@ while running:
         # Подсказка для лука
         if player.weapon_type == "bow":
             font = pygame.font.SysFont(None, 20)
-            hint_text = font.render("Атакуйте щелчком мыши в направлении врагов", True, (200, 200, 0))
-            screen.blit(hint_text, (WIDTH // 2 - hint_text.get_width() // 2, HEIGHT - 60))
+            hint_text = font.render(
+                "Атакуйте щелчком мыши в направлении врагов",
+                True,
+                (200, 200, 0),
+            )
+            screen.blit(
+                hint_text,
+                (WIDTH // 2 - hint_text.get_width() // 2, HEIGHT - 60),
+            )
 
     elif game_state == LEVEL_UP:
         # Отрисовка фона геймплея

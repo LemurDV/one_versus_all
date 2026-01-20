@@ -48,7 +48,11 @@ class Enemy:
 
         # Индикатор здоровья
         pygame.draw.rect(screen, RED, (self.x - 20, self.y - 30, 40, 5))
-        pygame.draw.rect(screen, GREEN, (self.x - 20, self.y - 30, 40 * (self.health / 50), 5))
+        pygame.draw.rect(
+            screen,
+            GREEN,
+            (self.x - 20, self.y - 30, 40 * (self.health / 50), 5),
+        )
 
     def move(self, player_x, player_y):
         # Движение к игроку
@@ -57,12 +61,18 @@ class Enemy:
         self.y += self.speed * math.sin(angle)
 
     def check_collision(self, player):
-        distance = math.sqrt((self.x - player.x) ** 2 + (self.y - player.y) ** 2)
+        distance = math.sqrt(
+            (self.x - player.x) ** 2 + (self.y - player.y) ** 2
+        )
         if distance < self.radius + player.radius:
             player.health -= 0.5
             return True
         return False
 
     def is_out_of_bounds(self):
-        return (self.x < -50 or self.x > self.width + 50 or
-                self.y < -50 or self.y > self.height + 50)
+        return (
+            self.x < -50
+            or self.x > self.width + 50
+            or self.y < -50
+            or self.y > self.height + 50
+        )

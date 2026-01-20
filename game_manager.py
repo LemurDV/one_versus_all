@@ -34,7 +34,8 @@ class GameManager:
         print(
             f"Минута {self.minute_counter}: Уровень сложности {self.difficulty_level}, "
             f"Множитель опыта: {self.experience_multiplier:.1f}x, "
-            f"Спавн врагов: каждые {self.enemy_spawn_rate} кадров")
+            f"Спавн врагов: каждые {self.enemy_spawn_rate} кадров"
+        )
 
     def get_experience(self, base_exp):
         """Возвращает опыт с учетом множителя"""
@@ -46,7 +47,7 @@ class GameManager:
             "minute": self.minute_counter,
             "level": self.difficulty_level,
             "exp_multiplier": self.experience_multiplier,
-            "spawn_rate": self.enemy_spawn_rate
+            "spawn_rate": self.enemy_spawn_rate,
         }
 
     def reset(self):
