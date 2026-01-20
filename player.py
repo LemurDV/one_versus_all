@@ -97,8 +97,9 @@ class Player:
         elif self.weapon_type == "bow":
             if self.attack_animation < 10:
                 arrow_length = self.attack_animation * 8
-                pygame.draw.line(screen, LIGHT_YELLOW, (self.x, self.y),
-                                 (self.x + arrow_length, self.y), 3)
+                pygame.draw.line(
+                    screen, LIGHT_YELLOW, (self.x, self.y),
+                    (self.x + arrow_length, self.y), 3),
                 self.attack_animation += 2
 
     def move(self, keys, width, height):

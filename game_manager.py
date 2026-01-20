@@ -31,9 +31,10 @@ class GameManager:
         # Ускоряем спавн врагов (максимум до 10 кадров между спавном)
         self.enemy_spawn_rate = max(10, 30 - (self.difficulty_level - 1) * 2)
 
-        print(f"Минута {self.minute_counter}: Уровень сложности {self.difficulty_level}, "
-              f"Множитель опыта: {self.experience_multiplier:.1f}x, "
-              f"Спавн врагов: каждые {self.enemy_spawn_rate} кадров")
+        print(
+            f"Минута {self.minute_counter}: Уровень сложности {self.difficulty_level}, "
+            f"Множитель опыта: {self.experience_multiplier:.1f}x, "
+            f"Спавн врагов: каждые {self.enemy_spawn_rate} кадров")
 
     def get_experience(self, base_exp):
         """Возвращает опыт с учетом множителя"""
